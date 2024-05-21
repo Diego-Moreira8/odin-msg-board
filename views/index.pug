@@ -2,6 +2,9 @@ extends layout
 
 block content
   a(class="new-message" href="/new") Nova mensagem
-  ul 
+  ul(class="messages")
     each msg in messages
-      li= msg.added + " " + msg.user + ": " + msg.text
+      li
+        p(class="message-user")= msg.user
+        p(class="message-text")= msg.text
+        p(class="message-time")= msg.added.toLocaleString()

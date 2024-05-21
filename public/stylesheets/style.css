@@ -1,5 +1,7 @@
 :root {
   --main-color: #00b7ff;
+  --main-color-light: #c4edfd;
+  --ok: #008e50;
 }
 
 body {
@@ -9,6 +11,8 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
   background-color: var(--main-color);
   padding: 1rem;
   text-align: center;
@@ -20,16 +24,54 @@ h1 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
+main {
+  padding: 1rem 1rem 4rem 1rem;
+}
+
 .new-message {
   display: block;
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  background-color: var(--main-color);
+  background-color: var(--ok);
   text-decoration: none;
   font-weight: bold;
   color: white;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+.messages > li {
+  background-color: var(--main-color-light);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.message-user {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.message-text {
+  margin: 0.5rem 0;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: grey;
+  font-style: italic;
 }
