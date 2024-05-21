@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  a(href="/new") Nova mensagem
+  ul 
+    each msg in messages
+      li= msg.added + " " + msg.user + ": " + msg.text
