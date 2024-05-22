@@ -1,15 +1,19 @@
 extends layout
 
 block content
-  h1 Nova mensagem
-
   a(href="/") Voltar para mensagens
 
-  form(method="POST" action="/new")
-    label(for="user") Nome de usuário:
-    input(type="text" id="user" name="user" required)
+  h2 Nova mensagem
 
-    label(for="message") Digite uma mensagem:
-    input(type="text" id="message" name="message" required)
+  form(method="POST" action="/new")
+    div(class="form-row")
+      label(for="user") Nome de usuário:
+      input(type="text" id="user" name="user" required)
+
+    div(class="form-row")
+      - var maxLength = "140"
+      label(for="message") Digite uma mensagem:
+      textarea(id="message" rows="3" name="message" maxlength=maxLength required)
+      p= "Máximo de " + maxLength + " caracteres"
 
     button(type="submit") Enviar
