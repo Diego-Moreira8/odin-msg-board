@@ -7,8 +7,10 @@ block content
 
   form(method="POST" action="/new")
     div(class="form-row")
+      - var maxLength = "16"
       label(for="user") Nome de usuário:
-      input(type="text" id="user" name="user" required)
+      input(type="text" id="user" name="user" maxlength=maxLength required)
+      p= "Máximo de " + maxLength + " caracteres"
 
     div(class="form-row")
       - var maxLength = "140"
